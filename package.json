@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "activedirectory2": "^2.2.0",
+    "axios": "^1.6.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fetch-cookie": "^2.1.0",
+    "http-proxy": "^1.18.1",
+    "http-proxy-middleware": "^2.0.6",
+    "ldapjs": "^3.0.5",
+    "node-fetch": "^2.7.0",
+    "tough-cookie": "^4.1.3"
+  }
+}

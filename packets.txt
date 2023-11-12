@@ -1,0 +1,223 @@
+cpdump -vv -i lo
+tcpdump: listening on lo, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+13:48:39.628897 IP (tos 0x0, ttl 64, id 42938, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.33784 > localhost.origo-native: Flags [S], cksum 0xfe30 (incorrect -> 0x31d1), seq 1831320194, win 65495, options [mss 65495,sackOK,TS val 1623721485 ecr 0,nop,wscale 7], length 0
+13:48:39.628917 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.origo-native > localhost.33784: Flags [S.], cksum 0xfe30 (incorrect -> 0x1089), seq 3352031905, ack 1831320195, win 65483, options [mss 65495,sackOK,TS val 1623721485 ecr 1623721485,nop,wscale 7], length 0
+13:48:39.628929 IP (tos 0x0, ttl 64, id 42939, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.33784 > localhost.origo-native: Flags [.], cksum 0xfe28 (incorrect -> 0x3745), seq 1, ack 1, win 512, options [nop,nop,TS val 1623721485 ecr 1623721485], length 0
+13:48:39.628977 IP (tos 0x0, ttl 64, id 42940, offset 0, flags [DF], proto TCP (6), length 1203)
+    localhost.33784 > localhost.origo-native: Flags [P.], cksum 0x02a8 (incorrect -> 0xcb65), seq 1:1152, ack 1, win 512, options [nop,nop,TS val 1623721485 ecr 1623721485], length 1151
+13:48:39.628982 IP (tos 0x0, ttl 64, id 2771, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.origo-native > localhost.33784: Flags [.], cksum 0xfe28 (incorrect -> 0x32cf), seq 1, ack 1152, win 503, options [nop,nop,TS val 1623721485 ecr 1623721485], length 0
+13:48:39.703655 IP (tos 0x0, ttl 64, id 30470, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.36250 > localhost.http: Flags [S], cksum 0xfe30 (incorrect -> 0xe921), seq 585387762, win 65495, options [mss 65495,sackOK,TS val 1623721559 ecr 0,nop,wscale 7], length 0
+13:48:39.703669 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.http > localhost.36250: Flags [S.], cksum 0xfe30 (incorrect -> 0x5f23), seq 387124167, ack 585387763, win 65483, options [mss 65495,sackOK,TS val 1623721559 ecr 1623721559,nop,wscale 7], length 0
+13:48:39.703680 IP (tos 0x0, ttl 64, id 30471, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.36250 > localhost.http: Flags [.], cksum 0xfe28 (incorrect -> 0x85de), seq 1, ack 1, win 512, options [nop,nop,TS val 1623721560 ecr 1623721559], length 0
+13:48:39.704468 IP (tos 0x0, ttl 64, id 30472, offset 0, flags [DF], proto TCP (6), length 503)
+    localhost.36250 > localhost.http: Flags [P.], cksum 0xffeb (incorrect -> 0xe054), seq 1:452, ack 1, win 512, options [nop,nop,TS val 1623721560 ecr 1623721559], length 451: HTTP, length: 451
+	POST /nps/servlet/imanauthentication HTTP/1.1
+	Accept: application/json, text/plain, */*
+	Content-Type: application/x-www-form-urlencoded
+	X-Continue-Processing: 100
+	User-Agent: axios/1.6.1
+	Content-Length: 154
+	Accept-Encoding: gzip, compress, deflate, br
+	Host: localhost
+	Connection: close
+	
+	rank=primary&DoLogin=true&forceMaster=false&Login_Key=1699604306168&username=user1&password=password1&tree=192.168.100.100&imanuasess=-4652312657193783031 [|http]
+13:48:39.704498 IP (tos 0x0, ttl 64, id 63548, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.http > localhost.36250: Flags [.], cksum 0xfe28 (incorrect -> 0x841d), seq 1, ack 452, win 509, options [nop,nop,TS val 1623721560 ecr 1623721560], length 0
+13:48:39.704788 IP (tos 0x0, ttl 64, id 49018, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.46146 > localhost.pichat: Flags [S], cksum 0xfe30 (incorrect -> 0x76af), seq 3830101618, win 65495, options [mss 65495,sackOK,TS val 1623721561 ecr 0,nop,wscale 7], length 0
+13:48:39.704799 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.pichat > localhost.46146: Flags [S.], cksum 0xfe30 (incorrect -> 0x3702), seq 4042778510, ack 3830101619, win 65483, options [mss 65495,sackOK,TS val 1623721561 ecr 1623721561,nop,wscale 7], length 0
+13:48:39.704806 IP (tos 0x0, ttl 64, id 49019, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46146 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0x5dbe), seq 1, ack 1, win 512, options [nop,nop,TS val 1623721561 ecr 1623721561], length 0
+13:48:39.704826 IP (tos 0x0, ttl 64, id 49020, offset 0, flags [DF], proto TCP (6), length 378)
+    localhost.46146 > localhost.pichat: Flags [P.], cksum 0xff6e (incorrect -> 0x32a2), seq 1:327, ack 1, win 512, options [nop,nop,TS val 1623721561 ecr 1623721561], length 326
+13:48:39.704830 IP (tos 0x0, ttl 64, id 15217, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.pichat > localhost.46146: Flags [.], cksum 0xfe28 (incorrect -> 0x5c7a), seq 1, ack 327, win 510, options [nop,nop,TS val 1623721561 ecr 1623721561], length 0
+13:48:39.704841 IP (tos 0x0, ttl 64, id 49021, offset 0, flags [DF], proto TCP (6), length 212)
+    localhost.46146 > localhost.pichat: Flags [P.], cksum 0xfec8 (incorrect -> 0xe09b), seq 327:487, ack 1, win 512, options [nop,nop,TS val 1623721561 ecr 1623721561], length 160
+13:48:39.704846 IP (tos 0x0, ttl 64, id 15218, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.pichat > localhost.46146: Flags [.], cksum 0xfe28 (incorrect -> 0x5bdb), seq 1, ack 487, win 509, options [nop,nop,TS val 1623721561 ecr 1623721561], length 0
+13:48:39.707814 IP (tos 0x0, ttl 64, id 15219, offset 0, flags [DF], proto TCP (6), length 282)
+    localhost.pichat > localhost.46146: Flags [P.], cksum 0xff0e (incorrect -> 0x9b1a), seq 1:231, ack 487, win 512, options [nop,nop,TS val 1623721564 ecr 1623721561], length 230
+13:48:39.707830 IP (tos 0x0, ttl 64, id 49022, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46146 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0x5aed), seq 487, ack 231, win 511, options [nop,nop,TS val 1623721564 ecr 1623721564], length 0
+13:48:39.707852 IP (tos 0x0, ttl 64, id 15220, offset 0, flags [DF], proto TCP (6), length 58)
+    localhost.pichat > localhost.46146: Flags [P.], cksum 0xfe2e (incorrect -> 0x1499), seq 231:237, ack 487, win 512, options [nop,nop,TS val 1623721564 ecr 1623721564], length 6
+13:48:39.707857 IP (tos 0x0, ttl 64, id 49023, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46146 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0x5ae7), seq 487, ack 237, win 511, options [nop,nop,TS val 1623721564 ecr 1623721564], length 0
+13:48:39.707983 IP (tos 0x0, ttl 64, id 63549, offset 0, flags [DF], proto TCP (6), length 393)
+    localhost.http > localhost.36250: Flags [P.], cksum 0xff7d (incorrect -> 0x9e24), seq 1:342, ack 452, win 512, options [nop,nop,TS val 1623721564 ecr 1623721560], length 341: HTTP, length: 341
+	HTTP/1.1 302 302
+	Date: Fri, 10 Nov 2023 08:18:39 GMT
+	Server: Apache
+	Set-Cookie: JSESSIONID=F669A36A005D98579078B2B377538A5F; Path=/nps; HttpOnly
+	X-FRAME-OPTIONS: SAMEORIGIN
+	X-Content-Type-Options: nosniff
+	X-XSS-Protection: 1; mode=block
+	Location: portal
+	Content-Type: text/html;charset=utf-8
+	Content-Length: 0
+	Connection: close
+	
+13:48:39.707995 IP (tos 0x0, ttl 64, id 30473, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.36250 > localhost.http: Flags [.], cksum 0xfe28 (incorrect -> 0x82bf), seq 452, ack 342, win 510, options [nop,nop,TS val 1623721564 ecr 1623721564], length 0
+13:48:39.708043 IP (tos 0x0, ttl 64, id 63550, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.http > localhost.36250: Flags [F.], cksum 0xfe28 (incorrect -> 0x82bc), seq 342, ack 452, win 512, options [nop,nop,TS val 1623721564 ecr 1623721564], length 0
+13:48:39.708940 IP (tos 0x0, ttl 64, id 30474, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.36250 > localhost.http: Flags [F.], cksum 0xfe28 (incorrect -> 0x82ba), seq 452, ack 343, win 512, options [nop,nop,TS val 1623721565 ecr 1623721564], length 0
+13:48:39.708957 IP (tos 0x0, ttl 64, id 63551, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.http > localhost.36250: Flags [.], cksum 0xfe28 (incorrect -> 0x82b9), seq 343, ack 453, win 512, options [nop,nop,TS val 1623721565 ecr 1623721565], length 0
+13:48:39.711714 IP (tos 0x0, ttl 64, id 56726, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.36252 > localhost.http: Flags [S], cksum 0xfe30 (incorrect -> 0xd066), seq 4049639717, win 65495, options [mss 65495,sackOK,TS val 1623721568 ecr 0,nop,wscale 7], length 0
+13:48:39.711730 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.http > localhost.36252: Flags [S.], cksum 0xfe30 (incorrect -> 0xe63b), seq 1227045338, ack 4049639718, win 65483, options [mss 65495,sackOK,TS val 1623721568 ecr 1623721568,nop,wscale 7], length 0
+13:48:39.711739 IP (tos 0x0, ttl 64, id 56727, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.36252 > localhost.http: Flags [.], cksum 0xfe28 (incorrect -> 0x0cf8), seq 1, ack 1, win 512, options [nop,nop,TS val 1623721568 ecr 1623721568], length 0
+13:48:39.711828 IP (tos 0x0, ttl 64, id 56728, offset 0, flags [DF], proto TCP (6), length 266)
+    localhost.36252 > localhost.http: Flags [P.], cksum 0xfefe (incorrect -> 0x35c7), seq 1:215, ack 1, win 512, options [nop,nop,TS val 1623721568 ecr 1623721568], length 214: HTTP, length: 214
+	GET /nps/servlet/portal HTTP/1.1
+	Accept: application/json, text/plain, */*
+	X-Continue-Processing: 100
+	User-Agent: axios/1.6.1
+	Accept-Encoding: gzip, compress, deflate, br
+	Host: localhost
+	Connection: close
+	
+13:48:39.711852 IP (tos 0x0, ttl 64, id 11368, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.http > localhost.36252: Flags [.], cksum 0xfe28 (incorrect -> 0x0c24), seq 1, ack 215, win 510, options [nop,nop,TS val 1623721568 ecr 1623721568], length 0
+13:48:39.712056 IP (tos 0x0, ttl 64, id 28688, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46118 > localhost.pichat: Flags [F.], cksum 0xfe28 (incorrect -> 0xb627), seq 230444813, ack 305248579, win 512, options [nop,nop,TS val 1623721568 ecr 1622604061], length 0
+13:48:39.712069 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto TCP (6), length 40)
+    localhost.pichat > localhost.46118: Flags [R], cksum 0x0f12 (correct), seq 305248579, win 0, length 0
+13:48:39.712099 IP (tos 0x0, ttl 64, id 11423, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.46148 > localhost.pichat: Flags [S], cksum 0xfe30 (incorrect -> 0xf67c), seq 2917100807, win 65495, options [mss 65495,sackOK,TS val 1623721568 ecr 0,nop,wscale 7], length 0
+13:48:39.712106 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.pichat > localhost.46148: Flags [S.], cksum 0xfe30 (incorrect -> 0x0631), seq 2824462532, ack 2917100808, win 65483, options [mss 65495,sackOK,TS val 1623721568 ecr 1623721568,nop,wscale 7], length 0
+13:48:39.712112 IP (tos 0x0, ttl 64, id 11424, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46148 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0x2ced), seq 1, ack 1, win 512, options [nop,nop,TS val 1623721568 ecr 1623721568], length 0
+13:48:39.712136 IP (tos 0x0, ttl 64, id 11425, offset 0, flags [DF], proto TCP (6), length 320)
+    localhost.46148 > localhost.pichat: Flags [P.], cksum 0xff34 (incorrect -> 0x1653), seq 1:269, ack 1, win 512, options [nop,nop,TS val 1623721568 ecr 1623721568], length 268
+13:48:39.712140 IP (tos 0x0, ttl 64, id 59731, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.pichat > localhost.46148: Flags [.], cksum 0xfe28 (incorrect -> 0x2be3), seq 1, ack 269, win 510, options [nop,nop,TS val 1623721568 ecr 1623721568], length 0
+13:48:39.712639 IP (tos 0x0, ttl 64, id 59732, offset 0, flags [DF], proto TCP (6), length 140)
+    localhost.pichat > localhost.46148: Flags [P.], cksum 0xfe80 (incorrect -> 0x3f17), seq 1:89, ack 269, win 512, options [nop,nop,TS val 1623721568 ecr 1623721568], length 88
+13:48:39.712656 IP (tos 0x0, ttl 64, id 11426, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46148 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0x2b89), seq 269, ack 89, win 512, options [nop,nop,TS val 1623721568 ecr 1623721568], length 0
+13:48:39.712678 IP (tos 0x0, ttl 64, id 59733, offset 0, flags [DF], proto TCP (6), length 58)
+    localhost.pichat > localhost.46148: Flags [P.], cksum 0xfe2e (incorrect -> 0xe534), seq 89:95, ack 269, win 512, options [nop,nop,TS val 1623721569 ecr 1623721568], length 6
+13:48:39.712683 IP (tos 0x0, ttl 64, id 11427, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46148 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0x2b81), seq 269, ack 95, win 512, options [nop,nop,TS val 1623721569 ecr 1623721569], length 0
+13:48:39.712751 IP (tos 0x0, ttl 64, id 11369, offset 0, flags [DF], proto TCP (6), length 235)
+    localhost.http > localhost.36252: Flags [P.], cksum 0xfedf (incorrect -> 0x02fe), seq 1:184, ack 215, win 512, options [nop,nop,TS val 1623721569 ecr 1623721568], length 183: HTTP, length: 183
+	HTTP/1.1 302 302
+	Date: Fri, 10 Nov 2023 08:18:39 GMT
+	Server: Apache
+	Cache-Control: private
+	Location: https://localhost/nps/servlet/portal
+	Content-Length: 0
+	Connection: close
+	
+13:48:39.712768 IP (tos 0x0, ttl 64, id 56729, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.36252 > localhost.http: Flags [.], cksum 0xfe28 (incorrect -> 0x0b6a), seq 215, ack 184, win 511, options [nop,nop,TS val 1623721569 ecr 1623721569], length 0
+13:48:39.712810 IP (tos 0x0, ttl 64, id 11370, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.http > localhost.36252: Flags [F.], cksum 0xfe28 (incorrect -> 0x0b68), seq 184, ack 215, win 512, options [nop,nop,TS val 1623721569 ecr 1623721569], length 0
+13:48:39.713112 IP (tos 0x0, ttl 64, id 56730, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.36252 > localhost.http: Flags [F.], cksum 0xfe28 (incorrect -> 0x0b67), seq 215, ack 185, win 512, options [nop,nop,TS val 1623721569 ecr 1623721569], length 0
+13:48:39.713127 IP (tos 0x0, ttl 64, id 11371, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.http > localhost.36252: Flags [.], cksum 0xfe28 (incorrect -> 0x0b67), seq 185, ack 216, win 512, options [nop,nop,TS val 1623721569 ecr 1623721569], length 0
+13:48:39.715933 IP (tos 0x0, ttl 64, id 55481, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.37906 > localhost.https: Flags [S], cksum 0xfe30 (incorrect -> 0x3fa8), seq 2280164215, win 65495, options [mss 65495,sackOK,TS val 1623721572 ecr 0,nop,wscale 7], length 0
+13:48:39.715950 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.https > localhost.37906: Flags [S.], cksum 0xfe30 (incorrect -> 0xf291), seq 3436845322, ack 2280164216, win 65483, options [mss 65495,sackOK,TS val 1623721572 ecr 1623721572,nop,wscale 7], length 0
+13:48:39.715959 IP (tos 0x0, ttl 64, id 55482, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.37906 > localhost.https: Flags [.], cksum 0xfe28 (incorrect -> 0x194e), seq 1, ack 1, win 512, options [nop,nop,TS val 1623721572 ecr 1623721572], length 0
+13:48:39.716143 IP (tos 0x0, ttl 64, id 55483, offset 0, flags [DF], proto TCP (6), length 367)
+    localhost.37906 > localhost.https: Flags [P.], cksum 0xff63 (incorrect -> 0x63f4), seq 1:316, ack 1, win 512, options [nop,nop,TS val 1623721572 ecr 1623721572], length 315
+13:48:39.716165 IP (tos 0x0, ttl 64, id 13260, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.https > localhost.37906: Flags [.], cksum 0xfe28 (incorrect -> 0x1815), seq 1, ack 316, win 510, options [nop,nop,TS val 1623721572 ecr 1623721572], length 0
+13:48:39.717076 IP (tos 0x0, ttl 64, id 13261, offset 0, flags [DF], proto TCP (6), length 2320)
+    localhost.https > localhost.37906: Flags [P.], cksum 0x0705 (incorrect -> 0x7bbd), seq 1:2269, ack 316, win 512, options [nop,nop,TS val 1623721573 ecr 1623721572], length 2268
+13:48:39.717089 IP (tos 0x0, ttl 64, id 55484, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.37906 > localhost.https: Flags [.], cksum 0xfe28 (incorrect -> 0x0f42), seq 316, ack 2269, win 499, options [nop,nop,TS val 1623721573 ecr 1623721573], length 0
+13:48:39.717773 IP (tos 0x0, ttl 64, id 55485, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.37906 > localhost.https: Flags [F.], cksum 0xfe28 (incorrect -> 0x0f33), seq 316, ack 2269, win 512, options [nop,nop,TS val 1623721574 ecr 1623721573], length 0
+13:48:39.717866 IP (tos 0x0, ttl 64, id 13262, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.https > localhost.37906: Flags [F.], cksum 0xfe28 (incorrect -> 0x0f31), seq 2269, ack 317, win 512, options [nop,nop,TS val 1623721574 ecr 1623721574], length 0
+13:48:39.717882 IP (tos 0x0, ttl 64, id 55486, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.37906 > localhost.https: Flags [.], cksum 0xfe28 (incorrect -> 0x0f31), seq 317, ack 2270, win 512, options [nop,nop,TS val 1623721574 ecr 1623721574], length 0
+13:48:39.724896 IP (tos 0x0, ttl 64, id 2772, offset 0, flags [DF], proto TCP (6), length 303)
+    localhost.origo-native > localhost.33784: Flags [P.], cksum 0xff23 (incorrect -> 0x7f91), seq 1:252, ack 1152, win 512, options [nop,nop,TS val 1623721581 ecr 1623721485], length 251
+13:48:39.724911 IP (tos 0x0, ttl 64, id 42941, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.33784 > localhost.origo-native: Flags [.], cksum 0xfe28 (incorrect -> 0x310c), seq 1152, ack 252, win 511, options [nop,nop,TS val 1623721581 ecr 1623721581], length 0
+13:48:39.725004 IP (tos 0x0, ttl 64, id 42942, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.33784 > localhost.origo-native: Flags [F.], cksum 0xfe28 (incorrect -> 0x310a), seq 1152, ack 252, win 512, options [nop,nop,TS val 1623721581 ecr 1623721581], length 0
+13:48:39.725576 IP (tos 0x0, ttl 64, id 2773, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.origo-native > localhost.33784: Flags [F.], cksum 0xfe28 (incorrect -> 0x3109), seq 252, ack 1153, win 512, options [nop,nop,TS val 1623721581 ecr 1623721581], length 0
+13:48:39.725591 IP (tos 0x0, ttl 64, id 42943, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.33784 > localhost.origo-native: Flags [.], cksum 0xfe28 (incorrect -> 0x3109), seq 1153, ack 253, win 512, options [nop,nop,TS val 1623721581 ecr 1623721581], length 0
+13:48:43.318501 IP (tos 0x0, ttl 64, id 34237, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.36254 > localhost.http: Flags [S], cksum 0xfe30 (incorrect -> 0xd494), seq 2524176844, win 65495, options [mss 65495,sackOK,TS val 1623725174 ecr 0,nop,wscale 7], length 0
+13:48:43.318550 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto TCP (6), length 60)
+    localhost.http > localhost.36254: Flags [S.], cksum 0xfe30 (incorrect -> 0x4a08), seq 1022548054, ack 2524176845, win 65483, options [mss 65495,sackOK,TS val 1623725174 ecr 1623725174,nop,wscale 7], length 0
+13:48:43.318582 IP (tos 0x0, ttl 64, id 34238, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.36254 > localhost.http: Flags [.], cksum 0xfe28 (incorrect -> 0x70c4), seq 1, ack 1, win 512, options [nop,nop,TS val 1623725174 ecr 1623725174], length 0
+13:48:43.318634 IP (tos 0x0, ttl 64, id 34239, offset 0, flags [DF], proto TCP (6), length 168)
+    localhost.36254 > localhost.http: Flags [P.], cksum 0xfe9c (incorrect -> 0xb970), seq 1:117, ack 1, win 512, options [nop,nop,TS val 1623725174 ecr 1623725174], length 116: HTTP, length: 116
+	OPTIONS * HTTP/1.0
+	User-Agent: Apache/2.4.51 (Linux/SUSE) OpenSSL/1.1.1l PHP/8.0.30 (internal dummy connection)
+	
+13:48:43.318698 IP (tos 0x0, ttl 64, id 2483, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.http > localhost.36254: Flags [.], cksum 0xfe28 (incorrect -> 0x7051), seq 1, ack 117, win 511, options [nop,nop,TS val 1623725174 ecr 1623725174], length 0
+13:48:43.318734 IP (tos 0x0, ttl 64, id 34240, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.36254 > localhost.http: Flags [F.], cksum 0xfe28 (incorrect -> 0x704e), seq 117, ack 1, win 512, options [nop,nop,TS val 1623725175 ecr 1623725174], length 0
+13:48:43.319188 IP (tos 0x0, ttl 64, id 2484, offset 0, flags [DF], proto TCP (6), length 162)
+    localhost.http > localhost.36254: Flags [P.], cksum 0xfe96 (incorrect -> 0xb444), seq 1:111, ack 118, win 512, options [nop,nop,TS val 1623725175 ecr 1623725175], length 110: HTTP, length: 110
+	HTTP/1.1 200 OK
+	Date: Fri, 10 Nov 2023 08:18:43 GMT
+	Server: Apache
+	Content-Length: 0
+	Connection: close
+	
+13:48:43.319250 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto TCP (6), length 40)
+    localhost.36254 > localhost.http: Flags [R], cksum 0xab39 (correct), seq 2524176962, win 0, length 0
+13:48:43.319490 IP (tos 0x0, ttl 64, id 15006, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46102 > localhost.pichat: Flags [F.], cksum 0xfe28 (incorrect -> 0x23cb), seq 1043226813, ack 358948085, win 512, options [nop,nop,TS val 1623725175 ecr 1622529132], length 0
+13:48:43.319519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto TCP (6), length 40)
+    localhost.pichat > localhost.46102: Flags [R], cksum 0xa83c (correct), seq 358948085, win 0, length 0
+13:48:46.720746 IP (tos 0x0, ttl 64, id 27283, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.pichat > localhost.46138: Flags [F.], cksum 0xfe28 (incorrect -> 0xdc04), seq 2375830228, ack 2805632524, win 512, options [nop,nop,TS val 1623728577 ecr 1623708224], length 0
+13:48:46.720866 IP (tos 0x0, ttl 64, id 10304, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.pichat > localhost.46142: Flags [F.], cksum 0xfe28 (incorrect -> 0xd7dd), seq 2151623990, ack 2529938911, win 512, options [nop,nop,TS val 1623728577 ecr 1623708154], length 0
+13:48:46.720931 IP (tos 0x0, ttl 64, id 55062, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.pichat > localhost.46144: Flags [F.], cksum 0xfe28 (incorrect -> 0x3f6b), seq 3674302136, ack 2114317012, win 512, options [nop,nop,TS val 1623728577 ecr 1623708151], length 0
+13:48:46.720956 IP (tos 0x0, ttl 64, id 11798, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.pichat > localhost.46134: Flags [F.], cksum 0xfe28 (incorrect -> 0xf31e), seq 3937912781, ack 2837879620, win 512, options [nop,nop,TS val 1623728577 ecr 1623708145], length 0
+13:48:46.721041 IP (tos 0x0, ttl 64, id 29173, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.pichat > localhost.46140: Flags [F.], cksum 0xfe28 (incorrect -> 0x85bf), seq 2521327064, ack 1824586590, win 512, options [nop,nop,TS val 1623728577 ecr 1623708155], length 0
+13:48:46.721146 IP (tos 0x0, ttl 64, id 33592, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.pichat > localhost.46136: Flags [F.], cksum 0xfe28 (incorrect -> 0x0fc6), seq 1961224299, ack 2942553491, win 512, options [nop,nop,TS val 1623728577 ecr 1623708144], length 0
+13:48:46.763265 IP (tos 0x0, ttl 64, id 37013, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46140 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0x35cf), seq 1, ack 1, win 512, options [nop,nop,TS val 1623728619 ecr 1623728577], length 0
+13:48:46.763266 IP (tos 0x0, ttl 64, id 11370, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46134 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0x6d2f), seq 1, ack 1, win 14325, options [nop,nop,TS val 1623728619 ecr 1623728577], length 0
+13:48:46.763269 IP (tos 0x0, ttl 64, id 4412, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46144 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0xef76), seq 1, ack 1, win 512, options [nop,nop,TS val 1623728619 ecr 1623728577], length 0
+13:48:46.763270 IP (tos 0x0, ttl 64, id 44498, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46136 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0xbfcf), seq 1, ack 1, win 507, options [nop,nop,TS val 1623728619 ecr 1623728577], length 0
+13:48:46.763323 IP (tos 0x0, ttl 64, id 26363, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46142 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0x87f0), seq 1, ack 1, win 508, options [nop,nop,TS val 1623728619 ecr 1623728577], length 0
+13:48:46.763324 IP (tos 0x0, ttl 64, id 12222, offset 0, flags [DF], proto TCP (6), length 52)
+    localhost.46138 > localhost.pichat: Flags [.], cksum 0xfe28 (incorrect -> 0x2e72), seq 1, ack 1, win 24551, options [nop,nop,TS val 1623728619 ecr 1623728577], length 0
+^C
+84 packets captured
+168 packets received by filter
+0 packets dropped by kernel
+

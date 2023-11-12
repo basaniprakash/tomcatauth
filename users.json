@@ -1,0 +1,21 @@
+{
+  "user1": {
+		"authType": "LDAP",
+    "storedPassword": "password1",
+    "otherProperty": "value1"
+  },
+  "user2": {
+		"authType": "LDAP",
+    "storedPassword": "password2",
+    "otherProperty": "value2"
+  },
+	"user3": {
+		"authType": "AD",
+		"storedPassword": "password3"
+	},
+	"user4": {
+		"authType": "EntraID",
+		"storedPassword": "password4"
+	}
+}
+

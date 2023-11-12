@@ -1,0 +1,148 @@
+cat -n /etc/opt/novell/iManager/nps-Apache.conf
+     1	# Enable Rewrite Engine
+     2	RewriteEngine On
+     3	# Check if Node.js has set the X-Continue-Processing header to true
+     4	RewriteCond %{HTTP:X-Continue-Processing} true
+     5	
+     6	# If the condition is met, forward the request to the AJP server
+     7	RewriteRule ^/nps/servlet/imanauthentication ajp://localhost:9009/nps [P,L]
+     8	
+     9	
+    10	# Forward all requests for authentication directly to Node.js
+    11	ProxyPass /nps/servlet/imanauthentication http://localhost:3001/authenticate
+    12	ProxyPassReverse /nps/servlet/imanauthentication http://localhost:3001/authenticate
+    13	
+    14	# Configuration for /nps
+    15	Alias /nps "/var/opt/novell/tomcat/webapps/nps"
+    16	ProxyPass /nps ajp://localhost:9009/nps
+    17	Timeout 600
+    18	
+    19	<Directory "/var/opt/novell/tomcat/webapps/">
+    20	    Options +FollowSymLinks
+    21	</Directory>
+    22	
+    23	<Directory "/var/opt/novell/tomcat/webapps/nps">
+    24	    Options MultiViews FollowSymLinks
+    25	    Require all granted
+    26	    AllowOverride All
+    27	</Directory>
+    28	
+    29	<Location "/nps">
+    30	    Require all granted
+    31	</Location>
+    32	
+    33	<Location "/nps/WEB-INF/">
+    34	    Require all denied
+    35	</Location>
+    36	
+    37	<Directory "/var/opt/novell/tomcat/webapps/nps/WEB-INF/">
+    38	    Require all denied
+    39	</Directory>
+    40	
+    41	<Location "/nps/META-INF/">
+    42	    Require all denied
+    43	</Location>
+    44	
+    45	<Directory "/var/opt/novell/tomcat/webapps/nps/META-INF/">
+    46	    Require all denied
+    47	</Directory>
+    48	
+    49	# Alias for iManager.html
+    50	Alias /iManager.html "/var/opt/novell/tomcat/webapps/nps/iManager.html"
+    51	
+    52	<Directory "/var/opt/novell/tomcat/webapps/ROOT">
+    53	    Options MultiViews FollowSymLinks
+    54	    Require all granted
+    55	    AllowOverride All
+    56	</Directory>
+    57	
+    58	<Location "/ROOT">
+    59	    Require all granted
+    60	</Location>
+    61	
+cat -n proxy.js 
+     1	require('dotenv').config();
+     2	const axios = require('axios');
+     3	const express = require('express');
+     4	const bodyParser = require('body-parser');
+     5	const authService = require('./AuthService');
+     6	const userService = require('./UserService');
+     7	
+     8	const app = express();
+     9	
+    10	const port = process.env.PORT || 3001;
+    11	
+    12	app.use(bodyParser.urlencoded({ extended: true }));
+    13	app.use(bodyParser.json());
+    14	
+    15	// POST endpoint to perform LDAP search on secondary server
+    16	app.post('/authenticate', async (req, res, next) => {
+    17		console.log('Req.body:', req.body);
+    18	  const { username, password } = req.body;
+    19		console.log(username, password);
+    20	
+    21		try {
+    22			console.log('Authenticating...');
+    23			const isAuthenticated = await authService.authenticateUser(username, password)
+    24	
+    25			if (isAuthenticated) {
+    26				console.log('Successfully authenticated..');
+    27				const storedPassword = userService.getStoredPassword(username);
+    28				if (storedPassword) {
+    29	
+    30					const modifiedBody = new URLSearchParams({
+    31								...req.body,
+    32								password: storedPassword
+    33					}).toString();
+    34	
+    35					console.log('modifiedBody:', modifiedBody);
+    36	        // Forward the modified request back to Apache
+    37	
+    38				// Forward the modified request back to Apache
+    39					axios.post('http://localhost:80/nps/servlet/imanauthentication', modifiedBody, {
+    40						headers: {
+    41							'Content-Type': 'application/x-www-form-urlencoded',
+    42							'X-Continue-Processing': 'true'
+    43						}
+    44					})
+    45					.then(apacheResponse => {
+    46						res.status(apacheResponse.status).send(apacheResponse.data);
+    47					})
+    48					.catch(error => {
+    49						console.error('Error forwarding to Apache:', error);
+    50						if (error.response) {
+    51							// The request was made and the server responded with a status code
+    52							// that falls out of the range of 2xx
+    53							console.error(error.response.data);
+    54							console.error(error.response.status);
+    55							console.error(error.response.headers);
+    56							res.status(error.response.status).send(error.response.data);
+    57						} else if (error.request) {
+    58							// The request was made but no response was received
+    59							console.error(error.request);
+    60							res.status(500).send('No response received from Apache');
+    61						} else {
+    62							// Something happened in setting up the request that triggered an Error
+    63							console.error('Error', error.message);
+    64							res.status(500).send(error.message);
+    65						}
+    66					});
+    67	
+    68				}
+    69				else {
+    70					return res.status(404).send('Stored password not found');
+    71				}
+    72				console.log('Forwarding to secondaryapp');
+    73			} else {
+    74					console.log('Authentication failed');
+    75					return res.status(401).send('Authentication failed');
+    76			}
+    77		} catch (error) {
+    78			return res.status(500).send(error.message);
+    79		}
+    80	});
+    81	
+    82	app.listen(port, () => {
+    83	  console.log(`Server is running at http://localhost:${port}`);
+    84	});
+    85	
